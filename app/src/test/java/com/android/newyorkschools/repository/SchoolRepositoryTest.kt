@@ -2,7 +2,6 @@ package com.android.newyorkschools.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.android.newyorkschools.BaseCoroutineTest
-import com.android.newyorkschools.cloud.api.SchoolEndpoints
 import com.android.newyorkschools.cloud.service.SchoolWebService
 import com.android.newyorkschools.model.School
 import com.android.newyorkschools.util.LocalResult
@@ -21,7 +20,7 @@ import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
-class SchoolDirectoryTest : BaseCoroutineTest() {
+class SchoolRepositoryTest : BaseCoroutineTest() {
     @get:Rule
     val instantTaskRule = InstantTaskExecutorRule()
 
@@ -61,10 +60,6 @@ class SchoolDirectoryTest : BaseCoroutineTest() {
     private companion object {
         private val SCHOOLS = (0..30).map {
             School(dbn = "DBN-$it")
-        }
-        private val schoolEndpoints = object : SchoolEndpoints() {
-            override val schools = ""
-            override val scores = ""
         }
     }
 }

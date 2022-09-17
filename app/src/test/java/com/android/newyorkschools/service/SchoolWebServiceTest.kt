@@ -58,7 +58,7 @@ class SchoolWebServiceTest : BaseCoroutineTest() {
     }
 
     @Test
-    fun `SchoolWebService Get School Error Call Returns In Local Result Success`() = runTest {
+    fun `SchoolWebService Get School Error Call Returns In Local Result Error`() = runTest {
         directoryWebService = SchoolWebService(
             testDispatcherProvider,
             schoolApi,
@@ -70,7 +70,7 @@ class SchoolWebServiceTest : BaseCoroutineTest() {
     }
 
     @Test
-    fun `SchoolWebService Get Score Error Call Returns In Local Result Success`() = runTest {
+    fun `SchoolWebService Get Score Error Call Returns In Local Result Error`() = runTest {
         directoryWebService = SchoolWebService(
             testDispatcherProvider,
             schoolApi,
