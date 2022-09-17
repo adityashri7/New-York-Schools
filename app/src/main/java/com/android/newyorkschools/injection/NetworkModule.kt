@@ -1,5 +1,6 @@
 package com.android.newyorkschools.injection
 
+import com.android.newyorkschools.BuildConfig
 import com.android.newyorkschools.cloud.api.SchoolApi
 import com.android.newyorkschools.cloud.api.SchoolEndpoints
 import com.android.newyorkschools.cloud.service.SchoolWebService
@@ -34,7 +35,7 @@ class NetworkModule {
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder()
-            .baseUrl("https://data.cityofnewyork.us/")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

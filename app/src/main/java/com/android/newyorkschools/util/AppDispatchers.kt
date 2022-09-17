@@ -4,13 +4,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 interface LocalDispatchers {
-    val io: CoroutineDispatcher
-    val main: CoroutineDispatcher
-    val default: CoroutineDispatcher
+    val IO: CoroutineDispatcher
+    val Main: CoroutineDispatcher
+    val Default: CoroutineDispatcher
 }
 
 class AppDispatchers : com.android.newyorkschools.util.LocalDispatchers {
-    override val io = Dispatchers.IO
-    override val main = Dispatchers.Main
-    override val default = Dispatchers.Default
+    override val IO = Dispatchers.IO
+    override val Main = Dispatchers.Main
+    override val Default = Dispatchers.Default
 }

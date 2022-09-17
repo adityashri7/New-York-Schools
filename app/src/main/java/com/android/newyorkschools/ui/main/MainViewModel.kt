@@ -31,8 +31,8 @@ class MainViewModel @Inject constructor(
     }
 
     fun loadSchools() {
-        mutableUiStateFlow.value = UiState.Loading(mutableUiStateFlow.value.schools)
-        viewModelScope.launch(CoroutineName("loadSchools" + dispatchers.default)) {
+        viewModelScope.launch(CoroutineName("loadSchools") + dispatchers.Default) {
+            mutableUiStateFlow.value = UiState.Loading(mutableUiStateFlow.value.schools)
             when (val schoolsResult = schoolRepository.getSchools()) {
                 is LocalResult.Error -> {
                     mutableUiStateFlow.value =

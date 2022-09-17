@@ -17,7 +17,7 @@ class SchoolWebService @Inject constructor(
     private val schoolEndpoints: SchoolEndpoints
 ) {
 
-    suspend fun getSchools(): LocalResult<List<School>> = withContext(dispatchers.io) {
+    suspend fun getSchools(): LocalResult<List<School>> = withContext(dispatchers.IO) {
         catchLocalErrors {
             val schoolsResponse =
                 schoolsApi.getEmployees(schoolEndpoints.schools).awaitResponse().body()
@@ -33,7 +33,7 @@ class SchoolWebService @Inject constructor(
         }
     }
 
-    suspend fun getScores(dbn: String): LocalResult<SchoolScore> = withContext(dispatchers.io) {
+    suspend fun getScores(dbn: String): LocalResult<SchoolScore> = withContext(dispatchers.IO) {
         catchLocalErrors {
             val schoolsResponse =
                 schoolsApi.getScores(schoolEndpoints.scores, dbn).awaitResponse().body()

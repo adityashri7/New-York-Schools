@@ -25,10 +25,10 @@ class DetailsViewModel @Inject constructor(
     val uiStateFlow: Flow<UiState> = mutableUiStateFlow
 
     fun setSchool(school: School) {
-        viewModelScope.launch(CoroutineName("setSchool") + dispatchers.default) {
+        viewModelScope.launch(CoroutineName("setSchool") + dispatchers.Default) {
             mutableUiStateFlow.emit(UiState.Loading(school))
         }
-        viewModelScope.launch(CoroutineName("loadSchoolScores") + dispatchers.default) {
+        viewModelScope.launch(CoroutineName("loadSchoolScores") + dispatchers.Default) {
             mutableUiStateFlow.emit(UiState.Loading(school))
             when (val schoolScoresResponse = schoolRepository.getSchoolScores(school.dbn)) {
                 is LocalResult.Error -> {

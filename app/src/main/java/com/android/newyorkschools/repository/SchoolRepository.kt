@@ -13,12 +13,12 @@ class SchoolRepository @Inject constructor(
     private val schoolWebService: SchoolWebService
 ) {
 
-    suspend fun getSchools(): LocalResult<List<School>> = withContext(dispatchers.default) {
+    suspend fun getSchools(): LocalResult<List<School>> = withContext(dispatchers.Default) {
         schoolWebService.getSchools()
     }
 
     suspend fun getSchoolScores(dbn: String): LocalResult<SchoolScore> =
-        withContext(dispatchers.default) {
+        withContext(dispatchers.Default) {
             schoolWebService.getScores(dbn)
         }
 }
