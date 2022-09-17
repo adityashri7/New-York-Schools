@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.newyorkschools.ui.main.MainFragment">
+
+        <action
+            android:id="@+id/navigateToDetails"
+            app:destination="@+id/detailsFragment">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.android.newyorkschools.ui.details.DetailsFragment">
+        <argument
+            app:argType="com.android.newyorkschools.model.School"
+            android:name="school"
+            app:nullable="false" />
+    </fragment>
+
+
+</navigation>

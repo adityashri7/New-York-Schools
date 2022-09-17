@@ -1,4 +1,4 @@
-package com.android.newyorkschools.cloud
+package com.android.newyorkschools.cloud.response
 
 import java.io.Serializable
 

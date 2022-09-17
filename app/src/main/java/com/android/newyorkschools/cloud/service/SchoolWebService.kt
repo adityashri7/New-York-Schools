@@ -4,6 +4,7 @@ import com.android.newyorkschools.cloud.api.SchoolApi
 import com.android.newyorkschools.cloud.api.SchoolEndpoints
 import com.android.newyorkschools.cloud.catchLocalErrors
 import com.android.newyorkschools.model.School
+import com.android.newyorkschools.model.SchoolScore
 import com.android.newyorkschools.util.LocalDispatchers
 import com.android.newyorkschools.util.LocalResult
 import kotlinx.coroutines.withContext
@@ -28,6 +29,22 @@ class SchoolWebService @Inject constructor(
                 }
             } else {
                 LocalResult.Error(Throwable("Schools Response is null"))
+            }
+        }
+    }
+
+    suspend fun getScores(dbn: String): LocalResult<SchoolScore> = withContext(dispatchers.io) {
+        catchLocalErrors {
+            val schoolsResponse =
+                schoolsApi.getScores(schoolEndpoints.scores, dbn).awaitResponse().body()
+            return@catchLocalErrors if (schoolsResponse != null) {
+                return@withContext try {
+                    LocalResult.Success(schoolsResponse[0].toAppModel())
+                } catch (e: Exception) {
+                    LocalResult.Error(e)
+                }
+            } else {
+                LocalResult.Error(Throwable("Schools Scores Response is null"))
             }
         }
     }

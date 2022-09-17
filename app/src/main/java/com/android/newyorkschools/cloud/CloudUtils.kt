@@ -1,5 +1,6 @@
 package com.android.newyorkschools.cloud
 
+import com.android.newyorkschools.cloud.response.CloudResponse
 import com.android.newyorkschools.util.LocalResult
 import com.google.gson.Gson
 

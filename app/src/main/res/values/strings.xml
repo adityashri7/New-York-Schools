@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">NewYorkSchools</string>
+    <string name="app_name">New York Schools</string>
+    <string name="satScoresHeader">SAT Scores</string>
+    <string name="satMathScoresHeader">Math</string>
+    <string name="satReadingScoresHeader">Reading</string>
+    <string name="satWritingScoresHeader">Writing</string>
+    <string name="errorLoadingSchoolsMessage">Error loading schools</string>
+    <string name="errorLoadingSchoolDetailsMessage">Error loading school details</string>
+    <string name="loadingScoresMessage">Loading Scores…</string>
+    <string name="noSatScoresFoundMessage">No Sat Scores Found</string>
 </resources>

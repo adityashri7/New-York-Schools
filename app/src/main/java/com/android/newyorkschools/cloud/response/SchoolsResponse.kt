@@ -1,12 +1,20 @@
-package com.android.newyorkschools.model
+package com.android.newyorkschools.cloud.response
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-data class School(
+
+data class SchoolResponse(
     @SerializedName("dbn") var dbn: String,
     @SerializedName("school_name") var schoolName: String? = null,
+    @SerializedName("boro") var boro: String? = null,
     @SerializedName("overview_paragraph") var overviewParagraph: String? = null,
+    @SerializedName("school_10th_seats") var school10thSeats: String? = null,
+    @SerializedName("academicopportunities1") var academicopportunities1: String? = null,
+    @SerializedName("academicopportunities2") var academicopportunities2: String? = null,
+    @SerializedName("ell_programs") var ellPrograms: String? = null,
+    @SerializedName("neighborhood") var neighborhood: String? = null,
+    @SerializedName("building_code") var buildingCode: String? = null,
+    @SerializedName("location") var location: String? = null,
     @SerializedName("phone_number") var phoneNumber: String? = null,
     @SerializedName("fax_number") var faxNumber: String? = null,
     @SerializedName("school_email") var schoolEmail: String? = null,
@@ -58,4 +66,63 @@ data class School(
     @SerializedName("bbl") var bbl: String? = null,
     @SerializedName("nta") var nta: String? = null,
     @SerializedName("borough") var borough: String? = null
-) : Serializable
+) : CloudResponse<com.android.newyorkschools.model.School>() {
+    override fun toAppModel(): com.android.newyorkschools.model.School {
+        return com.android.newyorkschools.model.School(
+            dbn = dbn,
+            schoolName = schoolName,
+            overviewParagraph = overviewParagraph,
+            phoneNumber = phoneNumber,
+            faxNumber = faxNumber,
+            schoolEmail = schoolEmail,
+            website = website,
+            subway = subway,
+            bus = bus,
+            grades2018 = grades2018,
+            finalgrades = finalgrades,
+            totalStudents = totalStudents,
+            extracurricularActivities = extracurricularActivities,
+            schoolSports = schoolSports,
+            attendanceRate = attendanceRate,
+            pctStuEnoughVariety = pctStuEnoughVariety,
+            pctStuSafe = pctStuSafe,
+            schoolAccessibilityDescription = schoolAccessibilityDescription,
+            directions1 = directions1,
+            requirement11 = requirement11,
+            requirement21 = requirement21,
+            requirement31 = requirement31,
+            requirement41 = requirement41,
+            requirement51 = requirement51,
+            offerRate1 = offerRate1,
+            program1 = program1,
+            code1 = code1,
+            interest1 = interest1,
+            method1 = method1,
+            seats9ge1 = seats9ge1,
+            grade9gefilledflag1 = grade9gefilledflag1,
+            grade9geapplicants1 = grade9geapplicants1,
+            seats9swd1 = seats9swd1,
+            grade9swdfilledflag1 = grade9swdfilledflag1,
+            grade9swdapplicants1 = grade9swdapplicants1,
+            seats101 = seats101,
+            admissionspriority11 = admissionspriority11,
+            admissionspriority21 = admissionspriority21,
+            admissionspriority31 = admissionspriority31,
+            grade9geapplicantsperseat1 = grade9geapplicantsperseat1,
+            grade9swdapplicantsperseat1 = grade9swdapplicantsperseat1,
+            primaryAddressLine1 = primaryAddressLine1,
+            city = city,
+            zip = zip,
+            stateCode = stateCode,
+            latitude = latitude,
+            longitude = longitude,
+            communityBoard = communityBoard,
+            councilDistrict = councilDistrict,
+            censusTract = censusTract,
+            bin = bin,
+            bbl = bbl,
+            nta = nta,
+            borough = borough
+        )
+    }
+}

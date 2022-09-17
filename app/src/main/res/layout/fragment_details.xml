@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.details.DetailsFragment">
+
+    <TextView
+        android:id="@+id/schoolTitleTextView"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:text="School Name" />
+
+    <TextView
+        android:id="@+id/loadingScoresTextView"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:text="@string/loadingScoresMessage" />
+
+    <LinearLayout
+        android:id="@+id/scoresContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:context=".ui.details.DetailsFragment">
+
+        <TextView
+            android:id="@+id/satHeaderTextView"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/satScoresHeader"
+            tools:text="SAT scores" />
+
+        <TextView
+            android:id="@+id/satMathHeaderTextView"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satMathScoresHeader" />
+
+        <TextView
+            android:id="@+id/satMathScoreTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satMathScoresHeader" />
+
+        <TextView
+            android:id="@+id/satReadingHeaderTextView"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satReadingScoresHeader" />
+
+        <TextView
+            android:id="@+id/satReadingScoreTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satMathScoresHeader" />
+
+        <TextView
+            android:id="@+id/satWritingHeaderTextView"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satWritingScoresHeader" />
+
+        <TextView
+            android:id="@+id/satWritingScoreTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/satMathScoresHeader" />
+
+    </LinearLayout>
+
+</LinearLayout>
